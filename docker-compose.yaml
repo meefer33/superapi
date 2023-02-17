@@ -1,0 +1,36 @@
+version: "3"
+services:
+  db:
+    image: 'postgres:latest'
+    hostname: db
+    environment:
+      POSTGRES_USER: superadmin 
+      POSTGRES_PASSWORD: Meefer24133 
+      POSTGRES_DB: shopapp
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+    volumes:
+      - ./pg-db:/var/lib/postgresql/data
+  node:
+    image: "backend"
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    working_dir: /app
+    restart: always
+    ports:
+     - 3001:3001
+    volumes:
+      - /app/node_modules
+      - .:/app
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=me@jeffkeith.me
+      - PGADMIN_DEFAULT_PASSWORD=Meefer33!
+    ports:
+      - "8080:80"
+    volumes:
+      - ./pg-admin:/var/lib/pgadmin
