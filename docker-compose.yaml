@@ -4,9 +4,9 @@ services:
     image: 'postgres:latest'
     hostname: db
     environment:
-      POSTGRES_USER: superadmin 
-      POSTGRES_PASSWORD: Meefer24133 
-      POSTGRES_DB: shopapp
+      POSTGRES_USER: POSTGRES_USER 
+      POSTGRES_PASSWORD: POSTGRES_PASSWORD 
+      POSTGRES_DB: POSTGRES_DB
     ports:
       - 5432:5432
     restart: unless-stopped

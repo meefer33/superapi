@@ -1,26 +1,8 @@
-import express, { Router, Request, Response } from "express";
+import { Request, Response } from "express";
 import { SessionRequest } from "supertokens-node/framework/express";
 import { verifySession } from "supertokens-node/recipe/session/framework/express";
 import UserRoles from "supertokens-node/recipe/userroles";
-
-const router: Router = express.Router();
-
-const tryCatch = async (func:any, next:any) =>  {
-	try {
-		const response = await func;
-        return response
-	} catch (error:any) {
-		next(error);
-	}
-};
-
-const isAdmin = {
-    overrideGlobalClaimValidators: async (globalValidators: any) => [
-        ...globalValidators,
-        UserRoles.UserRoleClaim.validators.includes("admin"),
-        // UserRoles.PermissionClaim.validators.includes("edit")
-    ],
-}
+import { tryCatch, isAdmin, router } from './utils'
 
 router.get('/admin/roles', verifySession(isAdmin), async (req: Request, res: Response) => {
     const roles: string[] = (await UserRoles.getAllRoles()).roles
