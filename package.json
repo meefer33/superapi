@@ -5,7 +5,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "node ./src/index.ts"
+        "start": "ts-node-dev --poll --respawn --debug ./src/index.ts"
     },
     "dependencies": {
         "cors": "^2.8.5",
