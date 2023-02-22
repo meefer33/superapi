@@ -6,7 +6,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "ts-node-dev --poll --respawn --debug ./src/index.ts",
-    "start": "ts-node dist/app.js",
+    "start": "ts-node ./src/index.ts",
     "build": "tsc -p ."
   },
   "dependencies": {
