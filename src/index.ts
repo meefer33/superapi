@@ -28,7 +28,7 @@ app.use(middleware());
 
 app.get("/ping", async (req, res) => {
   //await db.migrate.up();
-  res.send(true);
+  res.send("hello");
 });
 
 
