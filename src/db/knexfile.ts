@@ -11,7 +11,6 @@ export const config = {
     database: process.env.POSTGRES_DB as string,
     user: process.env.POSTGRES_USER as string,
     password: process.env.POSTGRES_PASSWORD as string,
-    ssl: { rejectUnauthorized: false },
   },
   pool: {
     min: 2,
