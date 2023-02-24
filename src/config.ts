@@ -3,9 +3,6 @@ import Session from 'supertokens-node/recipe/session'
 import { TypeInput } from 'supertokens-node/types'
 import Dashboard from 'supertokens-node/recipe/dashboard'
 import UserRoles from 'supertokens-node/recipe/userroles'
-import dotenv from "dotenv";
-
-dotenv.config();
 
 export const SuperTokensConfig: TypeInput = {
   framework: 'express',

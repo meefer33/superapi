@@ -6,11 +6,11 @@ dotenv.config();
 export const config = {
   client: "pg",
   connection: {
-    host: process.env.POSTGRESQL_HOST as string,
-    port: process.env.POSTGRESQL_PORT as string,
-    database: process.env.POSTGRESQL_DB as string,
-    user: process.env.POSTGRESQL_USER as string,
-    password: process.env.POSTGRESQL_PASSWORD as string,
+    host: process.env.POSTGRES_HOST as string,
+    port: process.env.POSTGRES_PORT as string,
+    database: process.env.POSTGRES_DB as string,
+    user: process.env.POSTGRES_USER as string,
+    password: process.env.POSTGRES_PASSWORD as string,
     ssl: { rejectUnauthorized: false },
   },
   pool: {

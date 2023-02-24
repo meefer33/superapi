@@ -6,10 +6,8 @@ import { SuperTokensConfig } from "./config";
 import dotenv from "dotenv";
 import roles from "./roles";
 import user from "./user";
-import db from "./db/knexfile";
 
 dotenv.config();
-
 supertokens.init(SuperTokensConfig);
 const app = express();
 app.use(express.urlencoded({ extended: true }));
