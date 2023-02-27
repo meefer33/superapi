@@ -7,5 +7,3 @@ services:
       dockerfile: ./Dockerfile
     working_dir: /app
     restart: always
-    ports:
-     - ${NODE_APP_PORT}:${NODE_APP_PORT}
