@@ -34,9 +34,9 @@ router.get("/updateUser", verifySession(), async (req: SessionRequest, res: Resp
     email: userInfo!.email,
   };
 
-  //await db.migrate.up()
+  await db.migrate.up()
 
-  await db("users")
+  await db("authed.users")
     .insert(user)
     .onConflict("auth_id")
     .merge()

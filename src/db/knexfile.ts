@@ -2,19 +2,14 @@ import { default as knex } from "knex";
 
 export const config = {
   client: "pg",
-  connection: {
-    host: process.env.POSTGRES_HOST as string,
-    port: process.env.POSTGRES_PORT as string,
-    database: process.env.POSTGRES_DB as string,
-    user: process.env.POSTGRES_USER as string,
-    password: process.env.POSTGRES_PASSWORD as string,
-  },
+  connection: process.env.POSTGRES_CONNECTION_STRING,
   pool: {
     min: 2,
     max: 10,
   },
   migrations: {
     tableName: "knex_migrations",
+    schemaName: "authed",
     directory: "./src/db/migrations",
   },
 };
