@@ -35,6 +35,7 @@ router.get("/updateUser", verifySession(), async (req: SessionRequest, res: Resp
   };
 
   await db.migrate.down()
+  await db.migrate.up()
 
   await db("authed.users")
     .insert(user)
