@@ -10,7 +10,7 @@ export async function up(knex: Knex): Promise<void> {
     table.uuid("id").primary().unique().defaultTo(knex.raw('gen_random_uuid()'));
     table.string("first_name").notNullable();
     table.string("last_name").notNullable();
-    table.uuid('user_id').references('id').inTable('users').notNullable();
+    table.uuid('user_id').references('id').inTable('auth.users').notNullable();
   })
 }
 
