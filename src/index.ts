@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: process.env.ST_WEBSITE_DOMAIN,
-    allowedHeaders: ["content-type", ...supertokens.getAllCORSHeaders()],
+    allowedHeaders: ["content-type","access-control-allow-origin", ...supertokens.getAllCORSHeaders()],
     methods: ["GET", "PUT", "POST", "DELETE"],
     credentials: true,
   })
