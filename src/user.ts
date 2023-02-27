@@ -34,7 +34,7 @@ router.get("/updateUser", verifySession(), async (req: SessionRequest, res: Resp
     email: userInfo!.email,
   };
 
-  await db.migrate.down()
+  //await db.migrate.down()
   await db.migrate.up()
 
   await db("authed.users")
