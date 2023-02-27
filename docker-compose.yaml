@@ -1,17 +1,5 @@
 version: "3"
 services:
-  db:
-    image: 'postgres:latest'
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
-    ports:
-      - ${POSTGRES_PORT}:${POSTGRES_PORT}
-    restart: unless-stopped
-    volumes:
-      - ./pg-db:/var/lib/postgresql/data
-
   node:
     image: "backend"
     build: 
@@ -21,16 +9,3 @@ services:
     restart: always
     ports:
      - ${NODE_APP_PORT}:${NODE_APP_PORT}
-    volumes:
-      - /app/node_modules
-      - .:/app
-
-  pgadmin:
-    image: dpage/pgadmin4
-    environment:
-      - PGADMIN_DEFAULT_EMAIL=me@jeffkeith.me
-      - PGADMIN_DEFAULT_PASSWORD=Meefer33!
-    ports:
-      - "8080:80"
-    volumes:
-      - ./pg-admin:/var/lib/pgadmin
