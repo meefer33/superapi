@@ -46,4 +46,4 @@ app.use((error: any, req: any, res: any, next: any) => {
   res.status(400).send({ status: "400", error: error.message });
 });
 
-app.listen(3000, () => console.log(`API Server listening on port 3000`));
+app.listen(process.env.NODE_APP_PORT, () => console.log(`API Server listening on port ${process.env.NODE_APP_PORT}`));
