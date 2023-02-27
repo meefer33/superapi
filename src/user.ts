@@ -47,4 +47,6 @@ router.get("/updateUser", verifySession(), async (req: SessionRequest, res: Resp
     });
 });
 
+router.post('')
+
 export default router;
