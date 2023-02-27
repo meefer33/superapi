@@ -46,4 +46,4 @@ app.use((error: any, req: any, res: any, next: any) => {
   res.status(400).send({ status: "400", error: error.message });
 });
 
-app.listen(3001, () => console.log(`API Server listening on port 3001`));
+app.listen(3000, () => console.log(`API Server listening on port 3000`));
