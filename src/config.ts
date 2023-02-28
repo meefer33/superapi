@@ -4,6 +4,9 @@ import { TypeInput } from 'supertokens-node/types'
 import Dashboard from 'supertokens-node/recipe/dashboard'
 import UserRoles from 'supertokens-node/recipe/userroles'
 
+
+const apiDomain = process.env.NODE_ENV === 'development' ? process.env.ST_API_DOMAIN_LOCAL : process.env.ST_API_DOMAIN
+
 export const SuperTokensConfig: TypeInput = {
   framework: 'express',
   supertokens: {
@@ -13,7 +16,7 @@ export const SuperTokensConfig: TypeInput = {
   },
   appInfo: {
     appName: process.env.ST_APP_NAME as string,
-    apiDomain: process.env.ST_API_DOMAIN as string,
+    apiDomain: apiDomain as string,
     websiteDomain: process.env.ST_WEBSITE_DOMAIN as string,
     apiBasePath: '/auth',
     websiteBasePath: '/auth',

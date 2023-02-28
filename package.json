@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "dev": "NODE_ENV=development DOTENV_CONFIG_PATH=.env.dev ts-node-dev --poll --respawn --debug -r dotenv/config ./src/index.ts",
+    "dev": "NODE_ENV=development ts-node-dev --poll --respawn --debug ./src/index.ts",
     "prod": "NODE_ENV=production ts-node ./src/index.ts",
     "build": "tsc -p ."
   },

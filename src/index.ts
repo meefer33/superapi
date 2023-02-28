@@ -1,13 +1,15 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import express, { Router, Request, Response } from "express";
 import cors from "cors";
 import supertokens from "supertokens-node";
 import { middleware, errorHandler } from "supertokens-node/framework/express";
 import { SuperTokensConfig } from "./config";
-import dotenv from "dotenv";
+
 import roles from "./roles";
 import user from "./user";
 
-dotenv.config();
 supertokens.init(SuperTokensConfig);
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -16,7 +18,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: process.env.ST_WEBSITE_DOMAIN,
-    allowedHeaders: ["content-type","access-control-allow-origin", ...supertokens.getAllCORSHeaders()],
+    allowedHeaders: ["content-type", ...supertokens.getAllCORSHeaders()],
     methods: ["GET", "PUT", "POST", "DELETE"],
     credentials: true,
   })
